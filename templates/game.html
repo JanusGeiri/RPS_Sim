@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Canvas</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+    canvas{
+        border: 1px solid black;
+    }
+    .container_inputs{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    body{
+        display: flex;
+    }
+    .container_button{
+        display: flex;
+        flex-direction: row;
+        /* height: 200px;
+        width: 200px; */
+    }
+    #run_game{
+        background-color: #9384;
+    }
+    label{
+        width: 100px;
+    }
+    .container_input{
+        display: flex;
+    }
+    .dashboard_container{
+
+        flex-direction: column;
+    }
+    .above_table{
+        display: flex;
+        flex-direction: row;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <div class="dashboard_container">
+    <div class="above_table">
+    <div style = "display:none">
+        <img id="rock_img" src="../static/sprites/rock.png"/>
+        <img id="scissor_img" src="../static/sprites/scissor.png"/>
+        <img id="paper_img" src="../static/sprites/paper.png"/>
+    </div>
+    <div class="container_button">
+        <input id="run_game" type="button" value="Start Game"/>
+        <input id="insert_to_table" type="button" value="Insert Into Table"/>
+    </div>
+    <div class="container_inputs">
+        <div class="container_input">
+            <label>N</label>
+            <input id="N" type="number" value = "10"/>
+        </div>
+        <div class="container_input">
+            <label>Repulsion</label>
+            <input id="force_repulsion" type="number" value = "-1"/>
+        </div>
+        <div class="container_input">
+            <label>Attraction</label>
+            <input id="force_attraction" type="number" value = "1"/>
+        </div>
+        <div class="container_input">
+            <label>Inter</label>
+            <input id="force_inter" type="number" value = "-0.33"/>
+        </div>
+    </div>
+    </div>
+    <!-- <div>
+    <h1>Data from RPS_Logs Table</h1>
+    <h2>#Rows {{col_nums}}</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>N</th>
+                <th>Repel</th>
+                <th>Attract</th>
+                <th>Inter</th>
+                <th>Winner</th>
+                <th>Time to Win</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr> 
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.N }}</td>
+                    <td>{{ row.repel }}</td>
+                    <td>{{ row.attract }}</td>
+                    <td>{{ row.inter }}</td>
+                    <td>{{ row.winner }}</td>
+                    <td>{{ row.time_to_win }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div> -->
+    <script src="../static/javascript/game.js"></script>
+    </div>
+</body>
+</html>
